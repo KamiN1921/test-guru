@@ -3,9 +3,9 @@
 #
 # Examples:
 #
-  User.create([{ login: "Vasya" }, { login: "Oleg" }])
-  Category.create([{title: "General"},{title: "Programming"}, {title:"Database"}])
-  Test.create([{title: "HTML", category_id: Category.first.id},{title:"Ruby", level: "1", category_id:Category.last.id}])
-  Question.create([{body: "First", test_id:Test.first.id},{body: "Second", test_id: Test.last.id}])
-  Answer.create([{body:"Yes",question_id:Question.first.id},{body:"No", correct: false, question_id: Question.last.id}])
-  Result.create([{user_id:User.first.id, test_id:Test.first.id }, {user_id:User.last.id, test_id:Test.first.id }, {user_id:User.first.id, test_id:Test.last.id }])
+  users = User.create([{ login: "Vasya" }, { login: "Oleg" }])
+  categories = Category.create([{title: "General"},{title: "Programming"}, {title:"Database"}])
+  tests = Test.create([{title: "HTML", category_id: categories.first.id},{title:"Ruby", level: "1", category_id:categories.last.id}])
+  questions = Question.create([{body: "First", test_id: tests.first.id},{body: "Second", test_id: tests.last.id}])
+  Answer.create([{body:"Yes",question_id:questions.first.id},{body:"No", correct: false, question_id: questions.last.id}])
+  Result.create([{users_id:users.first.id, tests_id:tests.first.id }, {users_id:users.last.id, tests_id:tests.first.id }, {users_id:users.first.id, tests_id:tests.last.id }])
