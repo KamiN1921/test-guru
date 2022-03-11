@@ -1,0 +1,6 @@
+<h1>Questions of Test n<%=@test.id %></h1>
+<ul>
+<%@questions.each do |question| %>
+  <li><%= "ID #{ question.id}: #{question.body}"%></li>
+<% end %>
+</ul>
