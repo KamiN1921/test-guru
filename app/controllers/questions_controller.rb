@@ -16,10 +16,18 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @test.questions.create([body: params[:question][:body].to_s, test_id: params[:test_id]])
+    @question = @test.questions.create(question_params)
+  end
+
+  def destroy
+    @question.destroy
   end
 
   private
+
+  def question_params
+    [body: params[:question][:body].to_s, test_id: params[:test_id]]
+  end
 
   def find_question
     @question = Question.find(params[:id])
