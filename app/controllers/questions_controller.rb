@@ -18,7 +18,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @test.questions.create(question_params)
+    @question = @test.questions.new(body: question_params)
+    if @question.save
+      render inline: "<h1>Created!</h1>"
+    else
+      render inline: "<h1>We have problems! try again</h1>"
+    end
   end
 
   def destroy
@@ -28,7 +33,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    [body: params[:question][:body].to_s, test_id: params[:test_id]]
+    params.require(:question).require(:body)
   end
 
   def find_question
