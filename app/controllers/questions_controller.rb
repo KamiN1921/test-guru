@@ -1,5 +1,6 @@
-class QuestionsController < ApplicationController
+# frozen_string_literal: true
 
+class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index new create]
   before_action :find_question, only: %i[show edit update destroy]
 
@@ -7,6 +8,16 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = @test.questions
+  end
+
+  def edit;end
+
+  def update
+    if @question.update(body: question_params)
+      render inline: '<h1>Updated!</h1>'
+    else
+      render inline: '<h1>We have problems! try again</h1>'
+    end
   end
 
   def show
@@ -20,9 +31,9 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.new(body: question_params)
     if @question.save
-      render inline: "<h1>Created!</h1>"
+      render inline: '<h1>Created!</h1>'
     else
-      render inline: "<h1>We have problems! try again</h1>"
+      render inline: '<h1>We have problems! try again</h1>'
     end
   end
 
@@ -45,6 +56,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_question_not_found
-    render plain: "Question not found"
+    render plain: 'Question not found'
   end
 end

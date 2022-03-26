@@ -1,7 +1,14 @@
-<h1>Questions of Test n<%=@test.id %></h1>
-<ul>
+<h1>Questions of <%=@test.title %> Test</h1>
+<table>
 <%@questions.each do |question| %>
-  <li><%= "ID #{ question.id}: #{question.body}"%></li>
-    <%= button_to "Delete", question_path(question.id), method: :delete %>
+    <tr>
+      <td> <%= "ID #{ question.id}: #{question.body}"%></td>
+      <td> <%= button_to "Delete", question_path(question.id), method: :delete %><td/>
+      <td> <%= link_to "Edit", edit_question_path(question.id) %></td>
+    </tr>
 <% end %>
-</ul>
+  <div>
+  <div><%= link_to "New", new_test_question_path(@test.id) %></div>
+    <div><%= link_to "Back", tests_path %></div>
+  </div>
+</table>

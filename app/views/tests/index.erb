@@ -1,0 +1,11 @@
+<h1>Tests</h1>
+<table>
+  <%@tests.each do |test| %>
+    <tr>
+      <td> <%= "#{ test.id}"%></td>
+      <td><%=" #{test.title}" %></td>
+      <td><%= "#{test.questions.count}" %></td>
+      <td><%= link_to "Questions", test_path(test.id) %></td>
+    </tr>
+  <% end %>
+</table>
