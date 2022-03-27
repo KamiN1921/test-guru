@@ -6,10 +6,6 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-    @questions = @test.questions
-  end
-
   def edit;end
 
   def update
@@ -29,8 +25,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @test.questions.new(body: question_params)
-    if @question.save
+    if @test.questions.new(question_params)
       render inline: '<h1>Created!</h1>'
     else
       render inline: '<h1>We have problems! try again</h1>'
