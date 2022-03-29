@@ -1,12 +1,6 @@
 <h1>Questions of <%=@test.title %> Test</h1>
 <table>
-<%@questions.each do |question| %>
-    <tr>
-      <td> <%= "ID #{ question.id}: #{question.body}"%></td>
-      <td> <%= button_to "Delete", question_path(question.id), method: :delete %><td/>
-      <td> <%= link_to "Edit", edit_question_path(question.id) %></td>
-    </tr>
-<% end %>
+  <%= render @questions %>
   <div>
   <div><%= link_to "New", new_test_question_path(@test.id) %></div>
     <div><%= link_to "Back", tests_path %></div>

@@ -4,7 +4,6 @@ module ApplicationHelper
   end
 
   def github_url(author, repo)
-    url = "#{author}, " + link_to("Test Guru", repo)
-    render inline: url
+    ("#{author}, " + link_to("Test Guru", repo)).html_safe
   end
 end

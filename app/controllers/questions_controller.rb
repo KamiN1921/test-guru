@@ -1,39 +1,39 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index new create]
+  before_action :find_test, only: %i[new create]
   before_action :find_question, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def edit;end
+  def edit; end
 
   def update
     if @question.update(body: question_params)
-      render inline: '<h1>Updated!</h1>'
+      redirect_to test_path(@question.test_id)
     else
-      render inline: '<h1>We have problems! try again</h1>'
+      render :edit
     end
   end
 
-  def show
-    render inline: "<h1><%= 'ID #{@question.id}: #{@question.body}'%></h1>"
-  end
+  def show; end
 
   def new
     @question = @test.questions.new
   end
 
   def create
-    if @test.questions.new(question_params)
-      render inline: '<h1>Created!</h1>'
+    @question = @test.questions.new(body: question_params)
+    if @question.save
+      redirect_to @test #200 ок от сервера вижу, редирект не вижу
     else
-      render inline: '<h1>We have problems! try again</h1>'
+      render :new
     end
   end
 
   def destroy
     @question.destroy
+    redirect_to controller: "tests", action: "show"
   end
 
   private
