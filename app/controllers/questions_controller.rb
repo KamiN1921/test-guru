@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   def edit; end
 
   def update
-    if @question.update(body: question_params)
+    if @question.update(question_params)
       redirect_to test_path(@question.test_id)
     else
       render :edit
@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @test.questions.new(body: question_params)
+    @question = @test.questions.new(question_params)
     if @question.save
       redirect_to @test #200 ок от сервера вижу, редирект не вижу
     else
@@ -39,7 +39,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).require(:body)
+    params.require(:question).permit(:body)
   end
 
   def find_question
