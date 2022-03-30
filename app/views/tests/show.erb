@@ -1,0 +1,8 @@
+<h1>Questions of <%=@test.title %> Test</h1>
+<table>
+  <%= render @questions %>
+  <div>
+  <div><%= link_to "New", new_test_question_path(@test.id) %></div>
+    <div><%= link_to "Back", tests_path %></div>
+  </div>
+</table>
