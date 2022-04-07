@@ -15,4 +15,4 @@
   <%= form.submit 'Next'%>
 <% end %>
 
-<p>Question n <%=question_count(@result)  %> of <%= @result.test.questions.count %></p>
+<p>Question n <%=@result.index_question %> of <%= @result.test.questions.count %></p>

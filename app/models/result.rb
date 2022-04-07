@@ -1,5 +1,6 @@
 class Result < ApplicationRecord
-  attr_reader :all_questions, :question_count
+
+  SUCCESS_PER = 85
 
   belongs_to :user
   belongs_to :test
@@ -17,8 +18,20 @@ class Result < ApplicationRecord
     self.current_question.nil?
   end
 
+  def percent
+    ((self.correct_question.to_f / self.test.questions.all.count) * 100).to_i
+  end
+
+  def success?
+    self.correct_question <= SUCCESS_PER
+  end
+
   def next_question
     self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+  end
+
+  def index_question
+    self.test.questions.index(self.current_question) +1
   end
 
   private
