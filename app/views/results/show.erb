@@ -1,0 +1,18 @@
+<h1>Passage of <%= @result.test.title %> Test</h1>
+
+<b>
+  <%=@result.current_question.body %>
+</b>
+
+<%= form_with url: result_path(@result), local: true, data: {turbo: false}, method: :put do |form|%>
+  <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body do |b|%>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+
+  <% end %>
+  <%= form.submit 'Next'%>
+<% end %>
+
+<p>Question n <%=question_count(@result)  %> of <%= @result.test.questions.count %></p>
