@@ -1,14 +1,5 @@
 <h1><%=question_header(@question) %> question for test <%= @question.test.title%></h1>
-<%if @question.errors.present? %>
-  <div>
-    <h2><%= pluralize(@question.errors.count, 'error') %> detected:</h2>
-    <ul>
-      <%@question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render 'shared/errors', resource: @question %>
 
   <%= form_with model: [@test, @question], data: {turbo: false}, local: true do |form| %>
     <%= form.text_field :body %>

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
+
+  before_action :authenticate_user!
   before_action :find_test, only: %i[show start]
   before_action :set_user, only: %i[start]
 
@@ -24,6 +26,6 @@ class TestsController < ApplicationController
   end
 
   def set_user
-    @user = User.first
+    @user = User.find(session[:user_id])
   end
 end
