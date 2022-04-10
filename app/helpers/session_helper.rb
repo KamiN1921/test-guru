@@ -1,6 +1,13 @@
 module SessionHelper
 
-  def flash_mes(message)
-    content_tag :p, message, class: 'flash alert' if message
+  def flash_mes(flash)
+    string = ''
+    flash.each do |type, message|
+      if message
+        string += content_tag :div, message, class: "flash #{type}"
+        string +='</br>'
+      end
+    end
+    string.html_safe
   end
 end

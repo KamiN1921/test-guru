@@ -1,5 +1,5 @@
 class AddPrimaryKeyToUsers < ActiveRecord::Migration[7.0]
   def change
-    change_column :users, :login, :string, unique: true
+    add_index :users, :login, unique: true
   end
 end
