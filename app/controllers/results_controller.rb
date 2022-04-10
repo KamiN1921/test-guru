@@ -1,5 +1,4 @@
 class ResultsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_test_result, only: %i[show result update]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_result_not_found
 

@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :authored_tests, foreign_key: "author_id", class_name: "Test"
 
   validates :login, uniqueness:{ case_sensitive: false }
-  validates :login, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: 'must be email' }
+  validates :login, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'must be email' }
   has_secure_password
 
   def all_user_tests(level)

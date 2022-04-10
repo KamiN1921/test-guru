@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-
-  before_action :authenticate_user!
   before_action :find_test, only: %i[show start]
-  before_action :set_user, only: %i[start]
 
   def index
     @tests = Test.all
@@ -15,8 +12,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
-    redirect_to @user.result(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.result(@test)
   end
 
   private
@@ -25,7 +22,4 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
-  def set_user
-    @user = User.find(session[:user_id])
-  end
 end
