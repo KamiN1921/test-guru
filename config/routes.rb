@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  get 'signup', to: 'users#new'
+  get 'login', to: 'session#new'
+  get 'logout', to: 'session#destroy'
+
+  resources :users, only: :create
+  resources :session, only: :create
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+   root "tests#index"
   resources :tests do
     resources :questions, shallow: true, except: :index do
       resources :answers, shallow: true, except: :index

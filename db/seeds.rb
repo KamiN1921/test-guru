@@ -4,7 +4,8 @@
   #
   # Examples:
 
-  users = User.create([{ login: 'Vasya' }, { login: 'Oleg' }])
+  users = User.create([{ login: 'Vasya22@mail.ru', password: '123', password_confirmation: '123'}, 
+                       { login: 'rear@test.com', password: '123', password_confirmation: '123' }])
   categories = Category.create([{ title: 'General' }, { title: 'Programming' }, { title: 'Database' }])
   tests = Test.create([{ title: 'HTML', category_id: categories.first.id, author_id: users.last.id },
                        { title: 'Ruby', level: '1', category_id: categories.last.id, author_id: users.last.id }])

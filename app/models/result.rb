@@ -23,7 +23,7 @@ class Result < ApplicationRecord
   end
 
   def success?
-    self.correct_question <= SUCCESS_PER
+    self.percent>= SUCCESS_PER
   end
 
   def next_question

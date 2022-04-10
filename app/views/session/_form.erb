@@ -1,0 +1,18 @@
+<%= form_with url: session_index_path, data: {turbo: false}, local: true do |form|%>
+  <%= flash_mes(flash) %>
+  <p>
+    <%= form.label :login %>
+    <%= form.text_field :login, id: :user_login%>
+  </p>
+
+  <p>
+    <%= form.label :password %>
+    <%= form.password_field :password, id: :user_password%>
+  </p>
+
+
+  <div>
+    <%= form.submit 'Enter' %>
+  </div>
+
+<% end %>
