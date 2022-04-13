@@ -1,14 +1,10 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show start]
+  before_action :find_test, only: :start
 
   def index
     @tests = Test.all
-  end
-
-  def show
-    @questions = @test.questions
   end
 
   def start
