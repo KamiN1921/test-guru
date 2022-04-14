@@ -12,10 +12,10 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    @test = Test.new(test_params)
-    #@test.author = current_user
+    @test = Test.new(author: current_user)
+    @test.update(test_params)
     if @test.save
-      redirect_to admin_tests_path #200 ок от сервера вижу, редирект не вижу
+      redirect_to admin_test_path(@test)
     else
       render :new
     end
@@ -25,7 +25,9 @@ class Admin::TestsController < Admin::BaseController
     @test.destroy
     redirect_to admin_tests_path
   end
-  def edit;end
+
+  def edit; end
+
   def update
     if @test.update(test_params)
       redirect_to admin_tests_path
@@ -45,7 +47,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title,:category_id,:author_id)
+    params.require(:test).permit(:title, :category_id, :level)
   end
-
 end

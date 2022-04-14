@@ -2,7 +2,6 @@ class ResultsController < ApplicationController
   before_action :set_test_result, only: %i[show result update]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_result_not_found
 
-
   def show; end
 
   def result; end
@@ -15,7 +14,6 @@ class ResultsController < ApplicationController
     else
       render :show
     end
-
   end
 
   private

@@ -4,6 +4,8 @@
   <%= form_with model: [:admin, @test], data: {turbo: false}, local: true do |form| %>
   <%= form.label :title %>
     <%= form.text_field :title %>
+  <%= form.label :level %>
+  <%= form.number_field :level, in: 1..10 %>
   <%= form.hidden_field :author_id, :value => current_user.id %>
   <%= form.select(:category_id) do %>
     <% Category.select(:title,:id).distinct.each do |c| -%>

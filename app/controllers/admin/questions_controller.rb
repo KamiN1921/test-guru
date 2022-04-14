@@ -25,7 +25,7 @@ class Admin::QuestionsController < Admin::BaseController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to admin_tests_path #200 ок от сервера вижу, редирект не вижу
+      redirect_to admin_tests_path # 200 ок от сервера вижу, редирект не вижу
     else
       render :new
     end

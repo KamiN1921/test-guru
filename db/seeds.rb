@@ -1,10 +1,11 @@
-  # frozen_string_literal: true
-  # This file should contain all the record creation needed to seed the database with its default values.
-  # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-  #
-  # Examples:
+# frozen_string_literal: true
 
-users = User.create([{ email: 'Vasya768@mail.ru', password: '123newpass', password_confirmation: '123newpass'},
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+
+users = User.create([{ email: 'Vasya768@mail.ru', password: '123newpass', password_confirmation: '123newpass' },
                      { email: 'test@test.ui', password: '123123newpass', password_confirmation: '123123newpass' }])
 categories = Category.create([{ title: 'General' }, { title: 'Programming' }, { title: 'Database' }])
 tests = Test.create([{ title: 'HTML', category_id: categories.first.id, author_id: users.last.id },
