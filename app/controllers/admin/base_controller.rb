@@ -5,8 +5,8 @@ class Admin::BaseController < ApplicationController
     redirect_to root_path, alert: 'You are not authorized to view this page' unless current_user.admin?
   end
 
-  def after_sign_in_path_for
-    if current_user.admin?
+  def after_sign_in_path_for(user)
+    if user.admin?
       admin_tests_path
     else
       root_path
