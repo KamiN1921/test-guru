@@ -1,0 +1,24 @@
+ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+      admin: 'Администратор'
+      test: 'тест'
+      result: 'Прохождение'
+      category: 'Категория'
+      question: 'Вопрос'
+      answer: 'Ответ'
+    attributes:
+      user:
+        email: "Email"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        password: "Пароль"
+      test:
+        title: "Название"
+        level: "Уровень"
+      question:
+        body: 'Вопрос'
+      answer:
+        body: 'Ответ'
+        correct: 'Верный'
