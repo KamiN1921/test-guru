@@ -1,8 +1,8 @@
-<h1>Questions of <%=@test.title %> Test</h1>
+<h1><%=t('.title', title: @test.title) %></h1>
 <table>
   <%= render @questions %>
   <tr>
-  <td><%= link_to "New", new_admin_test_question_path(@test.id) %></td>
-    <td><%= link_to "Back", admin_tests_path %></td>
+  <td><%= link_to t('.new'), new_admin_test_question_path(@test.id) %></td>
+    <td><%= link_to t('.back'), admin_tests_path %></td>
   </tr>
 </table>

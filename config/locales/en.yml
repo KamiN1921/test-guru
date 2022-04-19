@@ -30,4 +30,54 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  flash:
+    hi: 'Hi, %{name}'
+  helpers:
+    select:
+      prompt: "Please select"
+    submit:
+      create: 'Create %{model}'
+      update: 'Update %{model}'
+      submit: 'Save %{model}'
+    new: "New"
+    edit: "Edit"
+    not_auth: 'You are not authorized to view this page'
+    not_found: 'Question not found'
+    login: 'Login'
+    logout: 'Logout'
+    sign_up: 'Sign up'
+    hi_email: 'Welcome, %{email}'
+  admin:
+    tests:
+      form:
+        back: "Back"
+      index:
+        title: "Tests"
+        new: "New"
+        edit: "Edit"
+        delete: "Exterminate"
+        questions: "Questions"
+      show:
+        title: "Questions"
+        new: "New"
+        back: "Back"
+        show: "Show"
+    questions:
+      form:
+        title: "question for test %{title}"
+      question:
+        edit: "Edit"
+        delete: "Delete"
+        back: "Back"
+        show: "Show"
+  tests:
+    index:
+      title: "Tests"
+      start: "Start"
+  results:
+    result:
+      title: "Test passed %{title}"
+      passed: "You passed test on %{percent}"
+      failed: "You failed test on %{percent}"
+    show:
+      title: "Test passage %{title}"

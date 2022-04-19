@@ -1,2 +1,54 @@
 ru:
-  hello: "Привет мир!"
+  flash:
+    hi: 'Привет, %{name}'
+  helpers:
+    select:
+      prompt: "Пожалуйста выберите"
+    submit:
+      create: 'Создать %{model}'
+      update: 'Обновить %{model}'
+      submit: 'Сохранить %{model}'
+    new: "Новый"
+    edit: "Редактирование"
+    not_auth: 'Авторизуйтесь как администратор для просмотра этой страницы'
+    not_found: 'Вопрос не найден'
+    login: 'Войти'
+    logout: 'Выйти'
+    sign_up: 'Зарегистрироваться'
+    hi_email: 'Добро пожаловать, %{email}'
+  admin:
+    tests:
+      form:
+        back: "Назад"
+      index:
+        title: "Тесты"
+        new: "Создать"
+        edit: "Редактирование"
+        delete: "Удалить"
+        questions: "Вопросы"
+      show:
+        title: "Вопросы к тесту"
+        new: "Создать"
+        edit: "Редактирование"
+        delete: "Удалить"
+        back: "Назад"
+        show: "Показать"
+    questions:
+      form:
+        title: "вопроса к тесту %{title}"
+      question:
+        edit: "Редактирование"
+        delete: "Удалить"
+        back: "Назад"
+        show: "Показать"
+  tests:
+    index:
+      title: "Тесты"
+      start: "Старт"
+  results:
+    result:
+      title: "Пройден тест %{title}"
+      passed: "Тест успешно пройден на %{percent}"
+      failed: "Тест не пройден на %{percent}"
+    show:
+      title: "Прохождение теста %{title}"

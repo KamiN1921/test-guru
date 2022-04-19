@@ -1,9 +1,9 @@
-<h1>Result of passage <%= @result.test.title%> test</h1>
+<h1> <%=t('.title',title: @result.test.title)%></h1>
 <% if @result.success? %>
-<p class="text-success">You passed test on <%=@result.percent%>%</p>
+<p class="text-success"><%=t('.passed',percent:@result.percent)%>%</p>
   <% else %>
 
-  <p class="text-danger">You failed test with <%=@result.percent%>%</p>
+  <p class="text-danger"><%=t('.failed',percent:@result.percent)%>%</p>
   <% end %>
 
 <%=link_to "Tests", tests_path %>
