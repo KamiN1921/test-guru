@@ -2,7 +2,6 @@ class ResultsController < ApplicationController
   before_action :set_test_result, only: %i[show result update]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_result_not_found
 
-
   def show; end
 
   def result; end
@@ -10,11 +9,11 @@ class ResultsController < ApplicationController
   def update
     @result.accept!(params.require([:answer_ids]))
     if @result.completed?
+      TestsMailer.completed_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else
       render :show
     end
-
   end
 
   private

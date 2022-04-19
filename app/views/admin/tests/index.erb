@@ -1,0 +1,15 @@
+<h1>Tests</h1>
+<%= link_to 'New', new_admin_test_path %>
+<table>
+  <%@tests.each do |test| %>
+    <tr>
+      <td> <%= "#{ test.id}"%></td>
+      <td><%=" #{test.title}" %></td>
+      <td><%= "#{test.questions.count}" %></td>
+      <td><%= test.category.title %></td>
+      <td><%= link_to "Questions", admin_test_path(test.id) %></td>
+      <td> <%= link_to 'Edit', edit_admin_test_path(test)%></td>
+      <td><%= button_to 'Delete', admin_test_path(test), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
+</table>

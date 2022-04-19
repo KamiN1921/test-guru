@@ -1,0 +1,6 @@
+<tr>
+  <td> <%= "ID #{ question.id}: #{question.body}"%></td>
+  <td> <%= button_to "Delete", admin_question_path(question.id), method: :delete, data: {confirm: 'Are you sure?'} %><td/>
+  <td> <%= button_to  "Edit", edit_admin_question_path(question.id), method: :get %></td>
+  <td> <%= button_to "Show", admin_question_path(question.id), method: :get %><td/>
+</tr>

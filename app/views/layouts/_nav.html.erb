@@ -2,12 +2,12 @@
 
   <div class="row">
     <div class="col"><%=link_to 'Test Guru', root_path%></div>
-    <% if logged_in? %>
-      <div class="col"><%= button_to  "Logout", logout_path, method: :get  %></div>
-      <div class="col nav user"><p > Welcome, <b><%=current_user.login %></b></p></div>
+    <% if user_signed_in? %>
+      <div class="col"><%= button_to  "Logout", destroy_user_session_path, method: :delete  %></div>
+      <div class="col nav user"><p > Welcome, <b><%=current_user.email %></b></p></div>
       <%else %>
-    <div class="col"><%= button_to  "Login", login_path, method: :get  %></div>
-    <div class="col"><%= button_to  "Signup", signup_path, method: :get  %></div>
+    <div class="col"><%= button_to  "Login", new_user_session_path, method: :get  %></div>
+    <div class="col"><%= button_to  "Signup",  new_user_registration_path, method: :get  %></div>
       <% end %>
   </div>
 

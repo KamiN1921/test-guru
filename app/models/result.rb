@@ -1,5 +1,4 @@
 class Result < ApplicationRecord
-
   SUCCESS_PER = 85
 
   belongs_to :user
@@ -11,11 +10,11 @@ class Result < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_question += 1 if correct_answer?(answer_ids)
-    self.save
+    save
   end
 
   def completed?
-    self.current_question.nil?
+    current_question.nil?
   end
 
   def percent
@@ -23,7 +22,7 @@ class Result < ApplicationRecord
   end
 
   def success?
-    self.percent>= SUCCESS_PER
+    percent >= SUCCESS_PER
   end
 
   def next_question
@@ -31,11 +30,10 @@ class Result < ApplicationRecord
   end
 
   def index_question
-    self.test.questions.index(self.current_question) +1
+    self.test.questions.index(current_question) + 1
   end
 
   private
-
 
   def before_validation_set_first
     self.current_question = test.questions.order(:id).first if test.present?
@@ -48,7 +46,4 @@ class Result < ApplicationRecord
   def correct_answers
     current_question.answers.correct
   end
-
-
-
 end

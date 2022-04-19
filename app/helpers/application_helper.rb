@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def github_url(author, repo)
-    ("#{author}, " + link_to("Test Guru", repo)).html_safe
+    ("#{author}, " + link_to('Test Guru', repo)).html_safe
   end
 end

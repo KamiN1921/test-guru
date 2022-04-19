@@ -1,0 +1,8 @@
+<h1>Question</h1>
+<%= @answer.question.body %>
+
+<h2>Answer</h2>
+<table>
+<%= render @answer %>
+</table>
+<%= link_to "Back to question", admin_question_path(@answer.question) %>
