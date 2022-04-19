@@ -1,12 +1,12 @@
-<h1><%= t('.title')%></h1>
-<table>
+<h1 class="mt-5"><%= t('.title')%></h1>
+<div class="container mb-5">
   <%@tests.each do |test| %>
-    <tr>
-      <td> <%= test.id%></td>
-      <td><%=test.title%></td>
-      <td><%=test.questions.count%></td>
-      <td><%= test.category.title %></td>
-      <td><%= button_to t(".start"), start_test_path(test), data: {turbo: false} %></td>
-    </tr>
+    <div class="row">
+      <div class="col-1"> <%= test.id%></div>
+      <div class="col-4"><%=test.title%></div>
+      <div class="col-1"><%=test.questions.count%></div>
+      <div class="col-4"><%= test.category.title %></div>
+      <div class="col-1"><%= button_to t(".start"), start_test_path(test), data: {turbo: false}, class: 'btn btn-primary mb-4' %></div>
+    </div>
   <% end %>
-</table>
+</div>
