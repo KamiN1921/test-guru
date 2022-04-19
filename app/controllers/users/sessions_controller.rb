@@ -5,7 +5,7 @@ class Users::SessionsController < Devise::SessionsController
   after_action :custom_flash, only: [:create]
 
   def custom_flash
-    flash.notice = "Привет,  #{current_user.first_name}."
+    flash.notice = t("flash.hi", name: current_user.first_name)
   end
 
   # GET /resource/sign_in
