@@ -12,7 +12,11 @@
     </div>
 
   <% end %>
-  <%= form.submit 'Next', class: 'btn btn-primary mb-4'%>
+  <div class="row">
+    <%= link_to 'Gist', gist_result_path(@result), class: 'btn btn-primary mb-4 mt-4 mr-4', method: :post %>
+    <%= form.submit 'Next', class: 'btn btn-primary mb-4 mt-4'%>
+  </div>
+
 <% end %>
 
 <p>Question n <%=@result.index_question %> of <%= @result.test.questions.count %></p>

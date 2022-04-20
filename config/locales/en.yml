@@ -48,6 +48,11 @@ en:
     sign_up: 'Sign up'
     hi_email: 'Welcome, %{email}'
   admin:
+    gists:
+      index:
+        header: 'Ваши Gists'
+      gist:
+        go: 'Go'
     tests:
       form:
         back: "Back"
@@ -81,3 +86,7 @@ en:
       failed: "You failed test on %{percent}"
     show:
       title: "Test passage %{title}"
+    gist:
+      success: "Success saved"
+      failure: "We can't save gist"
+      view_gist: "View gist"

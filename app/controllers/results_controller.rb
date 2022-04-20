@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-  before_action :set_test_result, only: %i[show result update]
+  before_action :set_test_result
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_result_not_found
 
   def show; end
@@ -14,6 +14,18 @@ class ResultsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def gist
+    result = GistQuestionService.new(@result.current_question).call
+    if result
+      current_user.gists.create!(question: @result.current_question,
+                                 url: result.html_url)
+      flash_options = {notice: view_context.link_to(t('.success'),result.html_url,target: :_blank, remote: true)}
+    else
+      flash_options = {alert: t('.failure')}
+    end
+    redirect_to @result, flash_options
   end
 
   private

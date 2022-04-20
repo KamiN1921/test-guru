@@ -4,8 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.5'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+#gem 'faraday' входит в oktokit
 gem 'pry-byebug'
 gem 'rails', '~> 7.0.1'
+gem "octokit"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 gem 'rails-i18n'
@@ -63,7 +65,7 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem "spring"
   gem 'letter_opener'
 end
 

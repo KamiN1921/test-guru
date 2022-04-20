@@ -17,6 +17,11 @@ ru:
     sign_up: 'Зарегистрироваться'
     hi_email: 'Добро пожаловать, %{email}'
   admin:
+    gists:
+      index:
+        header: 'Ваши Gists'
+      gist:
+        go: 'Перейти'
     tests:
       form:
         back: "Назад"
@@ -52,3 +57,7 @@ ru:
       failed: "Тест не пройден на %{percent}"
     show:
       title: "Прохождение теста %{title}"
+    gist:
+      success: "Успешно сохранен"
+      failure: "Во время сохранения произошла ошибка"
+      view_gist: "Перейти к gist"
