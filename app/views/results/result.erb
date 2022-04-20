@@ -1,9 +1,13 @@
 <h1> <%=t('.title',title: @result.test.title)%></h1>
 <% if @result.success? %>
-<p class="text-success"><%=t('.passed',percent:@result.percent)%>%</p>
-  <% else %>
+  <div class="alert alert-success">
+    <p class="text-success"><%=t('.passed',percent:@result.percent)%>%</p>
+  </div>
 
+  <% else %>
+  <div class="alert alert-danger">
   <p class="text-danger"><%=t('.failed',percent:@result.percent)%>%</p>
+  </div>
   <% end %>
 
-<%=link_to "Tests", tests_path %>
+<%=link_to t('tests.index.title'), tests_path %>

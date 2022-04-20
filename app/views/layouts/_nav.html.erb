@@ -1,14 +1,18 @@
-<header class="container">
+<header class="navbar navbar-light bg-light">
 
-  <div class="row">
-    <div class="col"><%=link_to 'Test Guru', root_path%></div>
-    <% if user_signed_in? %>
-      <div class="col"><%= button_to  t("helpers.logout"), destroy_user_session_path, method: :delete  %></div>
-      <div class="col nav user"><p > <%= t("helpers.hi_email", email: current_user.email) %></p></div>
+    <div>
+      <%=link_to 'Test Guru', root_path, class:'navbar-brand'%>
+    </div>
+    <span class="navbar-text">
+      <% if user_signed_in? %>
+        <%= t("helpers.hi_email", email: current_user.email) %>
+        <%= button_to( t("helpers.logout"), destroy_user_session_path, method: :delete, class: 'btn btn-link m-0') %>
       <%else %>
-    <div class="col"><%= button_to  t('helpers.login'), new_user_session_path, method: :get  %></div>
-    <div class="col"><%= button_to  t("helpers.sign_up"),  new_user_registration_path, method: :get  %></div>
+    <%= link_to  t('helpers.login'), new_user_session_path  %>
+        |
+    <%= link_to  t("helpers.sign_up"),  new_user_registration_path%>
       <% end %>
-  </div>
+    </span>
+
 
 </header>

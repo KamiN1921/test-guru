@@ -4,15 +4,15 @@
   <%=@result.current_question.body %>
 </b>
 
-<%= form_with url: result_path(@result), local: true, data: {turbo: false}, method: :put do |form|%>
+<%= form_with url: result_path(@result), local: true, data: {turbo: false}, method: :put, class:'form-group' do |form|%>
   <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body do |b|%>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-      <%= b.label %>
-    </p>
+    <div class="form-check">
+      <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input' %>
+      <%= b.label class: 'form-check-label'%>
+    </div>
 
   <% end %>
-  <%= form.submit 'Next'%>
+  <%= form.submit 'Next', class: 'btn btn-primary mb-4'%>
 <% end %>
 
 <p>Question n <%=@result.index_question %> of <%= @result.test.questions.count %></p>

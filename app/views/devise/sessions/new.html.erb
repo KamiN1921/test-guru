@@ -1,25 +1,26 @@
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false})do |f| %>
-  <div class="field">
+  <div class="form-group">
+    <p>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    </p>
 
-  <div class="field">
+    <p>
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    </p>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
+      <div class="form-check">
+      <%= f.check_box :remember_me, class: 'form-check-input'%>
+      <%= f.label :remember_me, class: 'form-check-label' %>
+      </div>
   <% end %>
-
+  </div>
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit t(:'helpers.login'), class: 'btn btn-primary'%>
   </div>
 <% end %>
 
