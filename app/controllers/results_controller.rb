@@ -1,6 +1,7 @@
 class ResultsController < ApplicationController
   before_action :set_test_result
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_result_not_found
+  rescue_from ActiveRecord::RecordInvalid, with: :rescue_with_result_not_saved
 
   def show; end
 
@@ -17,8 +18,9 @@ class ResultsController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@result.current_question).call
-    if result
+    client = GistQuestionService.new(@result.current_question)
+    result = client.call
+    if client.success?
       current_user.gists.create!(question: @result.current_question,
                                  url: result.html_url)
       flash_options = {notice: view_context.link_to(t('.success'),result.html_url,target: :_blank, remote: true)}
@@ -40,6 +42,10 @@ class ResultsController < ApplicationController
 
   def rescue_with_result_not_found
     render plain: 'Result not found'
+  end
+
+  def rescue_with_result_not_saved
+    render plain: 'Error with save'
   end
 
   def next_question
