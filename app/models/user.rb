@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :results
   has_many :tests, through: :results
   has_many :authored_tests, foreign_key: 'author_id', class_name: 'Test'
+  has_many :gists, foreign_key: :author_id, class_name: 'Gist'
 
   validates :email, uniqueness: { case_sensitive: false },
                     format: { with: URI::MailTo::EMAIL_REGEXP, message: 'must be email' }

@@ -22,3 +22,4 @@ ru:
       answer:
         body: 'Ответ'
         correct: 'Верный'
+  description: "Вопрос о %{title} из TestGuru"

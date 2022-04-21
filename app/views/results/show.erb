@@ -4,7 +4,7 @@
   <%=@result.current_question.body %>
 </b>
 
-<%= form_with url: result_path(@result), local: true, data: {turbo: false}, method: :put, class:'form-group' do |form|%>
+<%= form_with url: result_path(@result), method: :put, local: true, data: {turbo: false}, class:'form-group' do |form|%>
   <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body do |b|%>
     <div class="form-check">
       <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input' %>
@@ -12,7 +12,11 @@
     </div>
 
   <% end %>
-  <%= form.submit 'Next', class: 'btn btn-primary mb-4'%>
+  <div class="row">
+    <%= link_to 'Gist', gist_result_path(@result), method: :post, class: 'btn btn-primary mb-4 mt-4 mr-4' %>
+    <%= form.submit 'Next', class: 'btn btn-primary mb-4 mt-4'%>
+  </div>
+
 <% end %>
 
 <p>Question n <%=@result.index_question %> of <%= @result.test.questions.count %></p>
