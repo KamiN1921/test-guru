@@ -79,6 +79,9 @@ en:
     index:
       title: "Tests"
       start: "Start"
+      action: "Action"
+      category: "Category"
+      count: "Question count"
   results:
     result:
       title: "Test passed %{title}"

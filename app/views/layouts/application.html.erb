@@ -9,6 +9,8 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     </head>
   <% if current_user.is_a?(Admin) %>
   <%= render "layouts/admin_nav" %>

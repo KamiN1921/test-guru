@@ -23,6 +23,7 @@ gem 'importmap-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
+gem 'turbolinks'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
@@ -65,8 +66,9 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  gem "spring"
+  #gem "spring"
   gem 'letter_opener'
+  gem 'octicons_helper'
 end
 
 group :test do
