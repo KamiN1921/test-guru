@@ -1,12 +1,14 @@
 <h1 class="mt-5"><%= t('.title')%></h1>
-<div class="container mb-5">
-  <%@tests.each do |test| %>
-    <div class="row">
-      <div class="col-1"> <%= test.id%></div>
-      <div class="col-4"><%=test.title%></div>
-      <div class="col-1"><%=test.questions.count%></div>
-      <div class="col-4"><%= test.category.title %></div>
-      <div class="col-1"><%= button_to t(".start"), start_test_path(test), data: {turbo: false}, class: 'btn btn-primary mb-4' %></div>
-    </div>
-  <% end %>
-</div>
+<table class="table mb-5">
+  <tr>
+    <th>ID</th>
+    <th class="sort-by-title pointer"><%= t('.title') %>
+      <%= octicon 'arrow-up', class: 'text-success hide'%>
+      <%= octicon 'arrow-down', class: 'text-success hide'%>
+    </th>
+    <th><%= t('.count') %></th>
+    <th><%= t('.category') %></th>
+    <th><%= t('.action') %></th>
+  </tr>
+<%=render @tests %>
+</table>

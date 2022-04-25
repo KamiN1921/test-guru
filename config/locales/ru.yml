@@ -50,6 +50,9 @@ ru:
     index:
       title: "Тесты"
       start: "Старт"
+      action: "Действие"
+      category: "Категория"
+      count: "Количество вопросов"
   results:
     result:
       title: "Пройден тест %{title}"
