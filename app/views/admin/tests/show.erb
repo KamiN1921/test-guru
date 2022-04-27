@@ -2,6 +2,7 @@
 <table>
   <%= render @questions %>
   <tr>
+    <td> <%= link_to t('.edit'), edit_admin_test_path(@test)%> </td>
   <td><%= link_to t('.new'), new_admin_test_question_path(@test.id) %></td>
     <td><%= link_to t('.back'), admin_tests_path %></td>
   </tr>

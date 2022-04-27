@@ -67,6 +67,8 @@ en:
         new: "New"
         back: "Back"
         show: "Show"
+      form_inline:
+        submit: "OK"
     questions:
       form:
         title: "question for test %{title}"

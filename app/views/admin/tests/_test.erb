@@ -1,9 +1,10 @@
 <tr>
   <td > <%=test.id%></td>
-  <td ><%=test.title%></td>
+  <td ><%=content_tag :span, test.title, class: 'test-title', data:{test_id: test.id}%>
+  <%= render 'form_inline', test: test == @test ? @test : test %></td>
   <td><%=test.questions.count%></td>
   <td ><%= test.category.title %></td>
   <td><%= link_to t('.questions'), admin_test_path(test.id) %></td>
-  <td> <%= link_to t('.edit'), edit_admin_test_path(test)%></td>
+  <td> <%= link_to t('.edit'), edit_admin_test_path(test), class:'form-inline-link', data: {test_id: test.id}%></td>
   <td><%= button_to t('.delete'), admin_test_path(test), method: :delete, data: {confirm: 'Are you sure?'} %></td>
 </tr>

@@ -23,3 +23,7 @@ ru:
         body: 'Ответ'
         correct: 'Верный'
   description: "Вопрос о %{title} из TestGuru"
+  admin:
+    tests:
+      form_inline:
+        submit: "OK"
