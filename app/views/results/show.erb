@@ -18,5 +18,9 @@
   </div>
 
 <% end %>
-
+<div class="progress">
+  <%= content_tag :div, class: 'progress-bar progress-scale', data:{"progress": progress_now(@result)} do %>
+   <%= progress_now(@result)%>
+  <% end %>
+</div>
 <p>Question n <%=@result.index_question %> of <%= @result.test.questions.count %></p>

@@ -1,5 +1,6 @@
 <h1><%=t('.title') %></h1>
 <%= link_to t('.new'), new_admin_test_path %>
+<%= render 'shared/errors', resource: @test %>
 <table class="table">
   <tr>
     <th>ID</th>
