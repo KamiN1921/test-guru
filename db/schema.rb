@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_20_195358) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_28_143909) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
     t.boolean "correct", default: true
@@ -24,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_20_195358) do
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_categories_on_title", unique: true
   end
 
   create_table "gists", force: :cascade do |t|
@@ -41,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_20_195358) do
     t.integer "test_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["body"], name: "index_questions_on_body", unique: true
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
@@ -91,6 +96,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_20_195358) do
     t.string "last_name"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["first_name", "last_name"], name: "index_users_on_first_name_and_last_name", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
