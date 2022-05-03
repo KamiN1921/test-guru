@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       post :start
     end
   end
+
   resources :feedback, only: %i[index create]
 
   resources :results, only: %i[show update] do
