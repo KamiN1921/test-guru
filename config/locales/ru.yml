@@ -64,3 +64,15 @@ ru:
       success: "Успешно сохранен"
       failure: "Во время сохранения произошла ошибка"
       view_gist: "Перейти к gist"
+  feedback:
+    index:
+      subj: "Что случилось?"
+      name: "Ваше имя"
+      email: "Ваш email"
+      send: "Отправить"
+      back: "Назад"
+    create:
+      success: "Успешно отправлено"
+  layouts:
+    footer:
+      contact: "Свяжитесь с нами"

@@ -1,0 +1,14 @@
+<%= form_with  url: feedback_index_path, method: :post, local: true do |form| %>
+  <%= form.label :subj, t('.subj') %>
+  <%= form.text_field :subj %>
+  <br>
+  <%= form.label :name, t('.name') %>
+  <%= form.text_field :name %>
+  <br>
+  <%= form.label :email, t('.email') %>
+  <%= form.text_field :email %>
+  <br>
+  <%= form.submit t('.send') %>
+<% end %>
+
+<%= link_to t('.back'), root_path %>

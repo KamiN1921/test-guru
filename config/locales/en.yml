@@ -95,3 +95,15 @@ en:
       success: "Success saved"
       failure: "We can't save gist"
       view_gist: "View gist"
+  feedback:
+    index:
+      subj: "What's happened?"
+      name: "Your name"
+      email: "Yout email"
+      send: "Send"
+      back: "Back"
+    create:
+      success: "Success sended"
+  layouts:
+    footer:
+      contact: "Contact us"
