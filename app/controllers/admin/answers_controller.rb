@@ -2,7 +2,6 @@ class Admin::AnswersController < Admin::BaseController
   before_action :find_question, only: %i[new create]
   before_action :set_answer, only: %i[show edit update destroy]
 
-  rescue_from ActiveRecord::InvalidForeignKey, with: :rescue_question_in_process
 
   # GET /answers or /answers.json
   def index
@@ -57,9 +56,5 @@ class Admin::AnswersController < Admin::BaseController
   # Only allow a list of trusted parameters through.
   def answer_params
     params.require(:answer).permit(:body, :correct)
-  end
-
-  def rescue_question_in_process
-    render plain: t('helpers.in_process')
   end
 end

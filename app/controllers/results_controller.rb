@@ -2,7 +2,6 @@ class ResultsController < ApplicationController
   before_action :set_test_result
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_result_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :rescue_with_result_not_saved
-  rescue_from StandardError, with: :rescue_with_no_questions
 
   def show; end
 
@@ -39,10 +38,6 @@ class ResultsController < ApplicationController
 
   def result_params
     params.require(:id)
-  end
-
-  def rescue_with_no_questions
-    render plain: 'No questions yet'
   end
 
   def rescue_with_result_not_found

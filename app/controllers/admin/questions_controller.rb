@@ -5,7 +5,6 @@ class Admin::QuestionsController < Admin::BaseController
   before_action :find_question, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
-  rescue_from ActiveRecord::InvalidForeignKey, with: :rescue_question_in_process
 
   def edit; end
 
@@ -38,10 +37,6 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   private
-
-  def rescue_question_in_process
-    render plain: t('helpers.in_process')
-  end
 
   def question_params
     params.require(:question).permit(:body)
