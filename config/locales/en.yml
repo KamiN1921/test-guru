@@ -97,7 +97,7 @@ en:
       failure: "We can't save gist"
       view_gist: "View gist"
   feedback:
-    index:
+    new:
       subj: "What's happened?"
       name: "Your name"
       email: "Yout email"
