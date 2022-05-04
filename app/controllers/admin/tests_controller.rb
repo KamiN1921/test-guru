@@ -4,6 +4,9 @@ class Admin::TestsController < Admin::BaseController
   before_action :set_tests, only: %i[index update_inline]
   before_action :find_test, only: %i[show edit update update_inline destroy]
 
+
+  rescue_from ActiveRecord::InvalidForeignKey, with: :rescue_question_in_process
+
   def index
 
   end
@@ -60,5 +63,9 @@ class Admin::TestsController < Admin::BaseController
 
   def test_params
     params.require(:test).permit(:title, :category_id, :level)
+  end
+
+  def rescue_question_in_process
+    render plain: t('helpers.in_process')
   end
 end

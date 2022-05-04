@@ -26,7 +26,7 @@ class Result < ApplicationRecord
   end
 
   def next_question
-    self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+    raise StandardError, "NoQuestions" if (self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first).nil?
   end
 
   def index_question

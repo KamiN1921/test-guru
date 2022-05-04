@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :feedback, only: %i[index create]
+  resources :feedback, only: %i[new create]
 
   resources :results, only: %i[show update] do
     member do

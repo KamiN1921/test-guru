@@ -1,4 +1,4 @@
-class FeedbackMailer < ActionMailer::Base
+class FeedbackMailer < ApplicationMailer
 
   def contact_me(form_hash,admin)
     @name = form_hash[:name]

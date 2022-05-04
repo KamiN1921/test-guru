@@ -16,6 +16,7 @@ ru:
     logout: 'Выйти'
     sign_up: 'Зарегистрироваться'
     hi_email: 'Добро пожаловать, %{email}'
+    in_process: "Кто-то использует этот элемент"
   admin:
     gists:
       index:

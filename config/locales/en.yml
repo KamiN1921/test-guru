@@ -47,6 +47,7 @@ en:
     logout: 'Logout'
     sign_up: 'Sign up'
     hi_email: 'Welcome, %{email}'
+    in_process: "Somebody use it"
   admin:
     gists:
       index:
