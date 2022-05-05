@@ -42,7 +42,7 @@ en:
     new: "New"
     edit: "Edit"
     not_auth: 'You are not authorized to view this page'
-    not_found: 'Question not found'
+    not_found: 'Object not found'
     login: 'Login'
     logout: 'Logout'
     sign_up: 'Sign up'
