@@ -42,11 +42,13 @@ en:
     new: "New"
     edit: "Edit"
     not_auth: 'You are not authorized to view this page'
-    not_found: 'Question not found'
+    not_found: 'Object not found'
     login: 'Login'
     logout: 'Logout'
     sign_up: 'Sign up'
     hi_email: 'Welcome, %{email}'
+    in_process: "Somebody use it"
+    not_uniq: "Alredy Exist"
   admin:
     gists:
       index:
@@ -62,6 +64,7 @@ en:
         edit: "Edit"
         delete: "Exterminate"
         questions: "Questions"
+        published: "Published?"
       show:
         title: "Questions"
         new: "New"
@@ -95,3 +98,15 @@ en:
       success: "Success saved"
       failure: "We can't save gist"
       view_gist: "View gist"
+  feedback:
+    new:
+      subj: "What's happened?"
+      name: "Your name"
+      email: "Yout email"
+      send: "Send"
+      back: "Back"
+    create:
+      success: "Success sended"
+  layouts:
+    footer:
+      contact: "Contact us"

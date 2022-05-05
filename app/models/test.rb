@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
-  has_many :results
-  has_many :questions
+  has_many :results, dependent: :destroy
+  has_many :questions, dependent: :destroy
   has_many :users, through: :results
   belongs_to :category
   belongs_to :author, class_name: 'User'
@@ -9,6 +9,7 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where('level>5') }
+  scope :published_for_users, -> { where(published: true) }
 
   validates :level, numericality: { only_integer: true }
   validates :title, presence: true, uniqueness: { scope: :level, message: 'must be uniq in level' }

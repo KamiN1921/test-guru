@@ -190,6 +190,7 @@ GEM
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
     orm_adapter (0.5.0)
+    pg (1.3.5)
     popper_js (1.16.0)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -223,9 +224,6 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
-    rails-i18n (7.0.3)
-      i18n (>= 0.7, < 2)
-      railties (>= 6.0.0, < 8)
     railties (7.0.2.3)
       actionpack (= 7.0.2.3)
       activesupport (= 7.0.2.3)
@@ -273,7 +271,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.1)
@@ -321,14 +318,13 @@ DEPENDENCIES
   letter_opener
   octicons_helper
   octokit
+  pg
   pry-byebug
   puma (~> 5.0)
   rails (~> 7.0.1)
-  rails-i18n
   sassc-rails
   selenium-webdriver
   sprockets-rails
-  sqlite3 (~> 1.4)
   stimulus-rails
   turbo-rails
   turbolinks

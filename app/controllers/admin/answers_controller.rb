@@ -2,6 +2,9 @@ class Admin::AnswersController < Admin::BaseController
   before_action :find_question, only: %i[new create]
   before_action :set_answer, only: %i[show edit update destroy]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_answer_not_found
+
+
   # GET /answers or /answers.json
   def index
     @answers = Answer.all
@@ -55,5 +58,10 @@ class Admin::AnswersController < Admin::BaseController
   # Only allow a list of trusted parameters through.
   def answer_params
     params.require(:answer).permit(:body, :correct)
+  end
+
+
+  def rescue_with_answer_not_found
+    render plain: t('helpers.not_found')
   end
 end

@@ -4,6 +4,10 @@ class Admin::TestsController < Admin::BaseController
   before_action :set_tests, only: %i[index update_inline]
   before_action :find_test, only: %i[show edit update update_inline destroy]
 
+
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
+  rescue_from ActiveRecord::RecordNotUnique, with: :rescue_with_test_not_uniq
+
   def index
 
   end
@@ -58,7 +62,15 @@ class Admin::TestsController < Admin::BaseController
     @test = Test.find(params[:id])
   end
 
+  def rescue_with_test_not_found
+    render plain: t('helpers.not_found')
+  end
+
+  def rescue_with_test_not_uniq
+    render plain: t('helpers.not_uniq')
+  end
+
   def test_params
-    params.require(:test).permit(:title, :category_id, :level)
+    params.require(:test).permit(:title, :category_id, :level, :published)
   end
 end

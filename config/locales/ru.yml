@@ -11,11 +11,13 @@ ru:
     new: "Новый"
     edit: "Редактирование"
     not_auth: 'Авторизуйтесь как администратор для просмотра этой страницы'
-    not_found: 'Вопрос не найден'
+    not_found: 'Объект не найден'
     login: 'Войти'
     logout: 'Выйти'
     sign_up: 'Зарегистрироваться'
     hi_email: 'Добро пожаловать, %{email}'
+    in_process: "Кто-то использует этот элемент"
+    not_uniq: "Уже существует"
   admin:
     gists:
       index:
@@ -31,6 +33,7 @@ ru:
         edit: "Редактирование"
         delete: "Удалить"
         questions: "Вопросы"
+        published: "Опубликован?"
       show:
         title: "Вопросы к тесту"
         new: "Создать"
@@ -64,3 +67,15 @@ ru:
       success: "Успешно сохранен"
       failure: "Во время сохранения произошла ошибка"
       view_gist: "Перейти к gist"
+  feedback:
+    new:
+      subj: "Что случилось?"
+      name: "Ваше имя"
+      email: "Ваш email"
+      send: "Отправить"
+      back: "Назад"
+    create:
+      success: "Успешно отправлено"
+  layouts:
+    footer:
+      contact: "Свяжитесь с нами"
