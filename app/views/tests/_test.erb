@@ -1,9 +1,7 @@
-<%if test.questions.count > 0%>
-  <tr>
+ <tr>
     <td > <%=test.id%></td>
     <td ><%=test.title%></td>
     <td><%=test.questions.count%></td>
     <td ><%= test.category.title %></td>
     <td ><%= button_to t(".start"), start_test_path(test), data: {turbo: false}, class: 'btn btn-primary' %></td>
   </tr>
-<%end %>

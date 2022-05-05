@@ -63,6 +63,7 @@ en:
         edit: "Edit"
         delete: "Exterminate"
         questions: "Questions"
+        published: "Published?"
       show:
         title: "Questions"
         new: "New"

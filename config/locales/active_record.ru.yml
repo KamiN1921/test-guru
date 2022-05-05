@@ -17,6 +17,7 @@ ru:
       test:
         title: "Название"
         level: "Уровень"
+        published: "Опубликован"
       question:
         body: 'Вопрос'
       answer:

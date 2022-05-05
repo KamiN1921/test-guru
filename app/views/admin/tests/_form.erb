@@ -11,7 +11,9 @@
     <% Category.select(:title,:id).distinct.each do |c| -%>
       <%= content_tag(:option, c.title, value: c.id) %>
     <% end %>
-  <% end %>
+  <% end %><br>
+  <%= form.label :published, class: 'form-check-label mr-5' %>
+  <%= form.check_box :published, class: 'form-check-input' %><br>
     <%= form.submit %>
   <% end %>
 <%= link_to t(".back"), admin_tests_path %>

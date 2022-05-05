@@ -32,6 +32,7 @@ ru:
         edit: "Редактирование"
         delete: "Удалить"
         questions: "Вопросы"
+        published: "Опубликован?"
       show:
         title: "Вопросы к тесту"
         new: "Создать"

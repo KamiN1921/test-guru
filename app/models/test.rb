@@ -9,6 +9,7 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where('level>5') }
+  scope :published_for_users, -> { where(published: true) }
 
   validates :level, numericality: { only_integer: true }
   validates :title, presence: true, uniqueness: { scope: :level, message: 'must be uniq in level' }
