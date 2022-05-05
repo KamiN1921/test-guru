@@ -17,6 +17,7 @@ ru:
     sign_up: 'Зарегистрироваться'
     hi_email: 'Добро пожаловать, %{email}'
     in_process: "Кто-то использует этот элемент"
+    not_uniq: "Уже существует"
   admin:
     gists:
       index:

@@ -5,6 +5,7 @@ class Admin::QuestionsController < Admin::BaseController
   before_action :find_question, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  rescue_from ActiveRecord::RecordNotUnique, with: :rescue_with_question_not_uniq
 
   def edit; end
 
@@ -52,5 +53,8 @@ class Admin::QuestionsController < Admin::BaseController
 
   def rescue_with_question_not_found
     render plain: t('helpers.not_found')
+  end
+  def rescue_with_question_not_uniq
+    render plain: t('helpers.not_uniq')
   end
 end

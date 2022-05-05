@@ -6,6 +6,7 @@ class Admin::TestsController < Admin::BaseController
 
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
+  rescue_from ActiveRecord::RecordNotUnique, with: :rescue_with_test_not_uniq
 
   def index
 
@@ -63,6 +64,10 @@ class Admin::TestsController < Admin::BaseController
 
   def rescue_with_test_not_found
     render plain: t('helpers.not_found')
+  end
+
+  def rescue_with_test_not_uniq
+    render plain: t('helpers.not_uniq')
   end
 
   def test_params
