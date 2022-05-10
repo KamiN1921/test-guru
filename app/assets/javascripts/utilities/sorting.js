@@ -1,9 +1,12 @@
-
+console.log('Wake up')
 document.addEventListener('turbolinks:load',function () {
     var control = document.querySelector('.sort-by-title')
-
+    console.log('here')
     if(control) {
         control.addEventListener('click', sortRowsByTitle)
+    }
+    else{
+        console.log('Cant found')
     }
 });
 
