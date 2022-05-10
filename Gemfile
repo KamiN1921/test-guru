@@ -10,6 +10,13 @@ gem 'rails', '~> 7.0.1'
 gem "octokit"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
+gem 'importmap-rails'
+# gem 'turbo-rails'
+# gem 'turbolinks'
+# gem 'stimulus-rails'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 5.0.0'
+gem 'sassc-rails'
 #gem 'rails-i18n'
 
 # Use sqlite3 as the database for Active Record
@@ -20,18 +27,17 @@ gem 'pg'
 gem 'puma', '~> 5.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem 'importmap-rails'
+
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails'
-gem 'turbolinks'
+
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails'
+
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
-gem 'jquery-rails'
+
 # Use Redis adapter to run Action Cable in production
 gem 'devise', '~> 4.0'
 
@@ -48,8 +54,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # Use Sass to process CSS
-gem 'bootstrap', '~> 4.0.0'
-gem 'sassc-rails'
+
 
 
 gem 'octicons_helper'

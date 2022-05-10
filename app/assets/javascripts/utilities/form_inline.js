@@ -1,6 +1,6 @@
 function formInlineHandler(test) {
     let link = $('.form-inline-link[data-test-id="'+test+'"]')
-    let testTitle =$('.test-title[data-test-id="'+test+'"]')
+    let testTitle = $('.test-title[data-test-id="'+test+'"]')
     let formInline = $('.form-inline[data-test-id="'+test+'"]')
 
 
@@ -22,21 +22,21 @@ function formInlineLinkHandler(event) {
 
 }
 
-document.addEventListener('turbolinks:load',function () {
-    var control = document.querySelectorAll('.form-inline-link')
+$( document ).ready(function () {
+    let control = document.querySelectorAll('.form-inline-link')
 
     if (!control.length) {
         return 0;
     }
-        for (var i = 0; i < control.length; i++) {
+        for (let i = 0; i < control.length; i++) {
             control[i].addEventListener('click', formInlineLinkHandler)
         }
 
 
-    var errors = $('.recource-errors')
+    let errors = $('.recource-errors')
 
     if (errors){
-        var resourceId = errors.dataset.resourceId
+        let resourceId = errors.dataset.resourceId
         formInlineHandler(resourceId)
     }
 });
