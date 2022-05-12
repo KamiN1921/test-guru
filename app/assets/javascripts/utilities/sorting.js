@@ -32,7 +32,7 @@ function sortRowsByTitle(){
     }
 
 
-    let sortedTable = document.createElement('table')
+    let sortedTable = document.createElement('table mb-5')
 
     sortedTable.classList.add('table')
     sortedTable.appendChild(rows[0])
