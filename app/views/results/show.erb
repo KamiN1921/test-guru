@@ -3,7 +3,10 @@
 <b>
   <%=@result.current_question.body %>
 </b>
-
+<div class="container">
+  <%= content_tag :p,t('.time'), class: '' %>
+  <%= content_tag :div, @result.test.timer, class: 'timer', data:{"time": @result.test.timer, "start": @result.created_at.to_i,"needtime":@result.need_time?} %>
+</div>
 <%= form_with url: result_path(@result), method: :put, local: true, data: {turbo: false}, class:'form-group' do |form|%>
   <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body do |b|%>
     <div class="form-check">

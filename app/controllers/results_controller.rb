@@ -3,9 +3,15 @@ class ResultsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_result_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :rescue_with_result_not_saved
 
-  def show; end
+  def show
+    if @result.completed? || @result.ended?
+      redirect_to result_result_path(@result)
+    end
+  end
 
-  def result; end
+  def result
+    @result.end_test!
+  end
 
   def update
     @result.accept!(params.require([:answer_ids]))

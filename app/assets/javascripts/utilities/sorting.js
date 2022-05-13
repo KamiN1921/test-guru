@@ -1,11 +1,7 @@
 $( document ).ready(function () {
     let control = document.querySelector('.sort-by-title')
-    console.log('here')
     if(control) {
         control.addEventListener('click', sortRowsByTitle)
-    }
-    else{
-        console.log('Cant found')
     }
 });
 
@@ -32,9 +28,9 @@ function sortRowsByTitle(){
     }
 
 
-    let sortedTable = document.createElement('table mb-5')
+    let sortedTable = document.createElement('table')
 
-    sortedTable.classList.add('table')
+    sortedTable.classList.add('table mb-5')
     sortedTable.appendChild(rows[0])
 
     for (let i = 0; i<sortedRows.length; i++){
