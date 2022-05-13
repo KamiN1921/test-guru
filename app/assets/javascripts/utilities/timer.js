@@ -28,7 +28,7 @@ function StartTimer(control){
 
         if (distance < 0) {
             clearInterval(x);
-            control.innerHTML = "EXPIRED";
+            window.location.reload(control.dataset.redir);
         }
     }, 1000);
 
