@@ -28,7 +28,8 @@ function StartTimer(control){
 
         if (distance < 0) {
             clearInterval(x);
-            window.location.reload(control.dataset.redir);
+            control.innerHTML = "EXPIRED";
+            $('.form-group').submit();
         }
     }, 1000);
 
