@@ -6,6 +6,8 @@
     <%= form.text_field :title %>
   <%= form.label :level %>
   <%= form.number_field :level, in: 1..10 %>
+  <%= form.label :timer %>
+  <%= form.number_field :timer, in: 0..120 %>
   <%= form.hidden_field :author_id, :value => current_user.id %>
   <%= form.select(:category_id) do %>
     <% Category.select(:title,:id).distinct.each do |c| -%>

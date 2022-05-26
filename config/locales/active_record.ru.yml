@@ -18,6 +18,7 @@ ru:
         title: "Название"
         level: "Уровень"
         published: "Опубликован"
+        timer: "Время на прохождение"
       question:
         body: 'Вопрос'
       answer:

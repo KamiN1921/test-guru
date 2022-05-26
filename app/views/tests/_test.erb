@@ -3,5 +3,6 @@
     <td ><%=test.title%></td>
     <td><%=test.questions.count%></td>
     <td ><%= test.category.title %></td>
+   <td ><%= test.timer %></td>
     <td ><%= button_to t(".start"), start_test_path(test), data: {turbo: false}, class: 'btn btn-primary' %></td>
   </tr>
