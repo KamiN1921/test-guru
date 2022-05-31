@@ -3,18 +3,22 @@ class ResultsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_result_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :rescue_with_result_not_saved
 
-  def show; end
+  def show ;end
 
-  def result; end
+  def result
+    @result.end_test! unless @result.completed? || @result.ended?
+  end
 
   def update
     @result.accept!(params.require([:answer_ids]))
+
     achivment_service = AchivmentsService.new(@result)
     if achivment_service.call
       flash[:notice] = t('.get_achivment') + "#{ view_context.link_to(t('.reward'), achivments_path, target: :_blank) }"
     end
 
-      if @result.completed?
+    if @result.completed? || @result.ended?
+      
       TestsMailer.completed_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else

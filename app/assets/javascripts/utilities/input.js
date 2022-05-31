@@ -1,6 +1,6 @@
-document.addEventListener('turbolinks:load',function () {
-    var control = document.querySelector('#user_password_confirmation')
-    var control2 = document.querySelector('#user_password')
+$( document ).ready(function () {
+    let control = document.querySelector('#user_password_confirmation')
+    let control2 = document.querySelector('#user_password')
 
     if(control) {
         control.addEventListener('input', comparePasswords)
@@ -9,8 +9,8 @@ document.addEventListener('turbolinks:load',function () {
 });
 
 function comparePasswords() {
-    var password = $('#user_password')
-    var confirmation = $('#user_password_confirmation')
+    let password = $('#user_password')
+    let confirmation = $('#user_password_confirmation')
 
     if((confirmation.val()==='')){
         confirmation.removeClass('alert-success')

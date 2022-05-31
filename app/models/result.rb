@@ -16,6 +16,18 @@ class Result < ApplicationRecord
     current_question.nil?
   end
 
+  def ended?
+    self.clear || (created_at.to_i + test.timer * 60 - Time.now.to_i <=0)
+  end
+
+  def need_time?
+    test.timer>0
+  end
+
+  def end_test!
+    self.update({clear:true})
+  end
+
   def percent
     ((self.correct_question.to_f / self.test.questions.all.count) * 100).to_i
   end
