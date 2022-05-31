@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <%=image_tag(badge.file, height: '32', width: '32',  class: 'image')%>
+  </td>
+  <td>
+    <%= achivment.badge.title %>
+  </td>
+  <td>
+    <%= link_to t('.show_badge'), badge_path(achivment.badge), class: "btn btn-primary" %>
+  </td>
+</tr>

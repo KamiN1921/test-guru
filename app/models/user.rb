@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :tests, through: :results, dependent: :destroy
   has_many :authored_tests, foreign_key: 'author_id', class_name: 'Test', dependent: :restrict_with_exception
   has_many :gists, foreign_key: :author_id, class_name: 'Gist', dependent: :destroy
+  has_many :user_badges
+  has_many :badges, through: :user_badges, dependent: :destroy
 
   validates :email, uniqueness: { case_sensitive: false },
                     format: { with: URI::MailTo::EMAIL_REGEXP, message: 'must be email' }

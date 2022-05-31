@@ -1,0 +1,9 @@
+<div class="mt-5">
+  <h3>
+    <%= t('.badge_header') %>
+  </h3>
+  <div class="row">
+      <%= render 'form', badge: @badge %>
+      <%= link_to t('.back'), admin_badges_path%>
+  </div>
+</div>

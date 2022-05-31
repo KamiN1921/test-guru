@@ -9,7 +9,13 @@
   <p>
     <%= github_url("Чаенкова Дарья", "https://github.com/KamiN1921/test-guru/") %> <br>
     <%= link_to "Учебный проект в онлайн-школе Thinknetica", "https://thinknetica.com" %><br>
-    <%= link_to t('.contact'), new_feedback_path %>
+    <%= link_to t('.contact'), new_feedback_path %><br>
+    <%= link_to t('.my_badges'), achivments_path %><br>
+    <% if current_user.is_a?(Admin) %>
+      <%= link_to t('.badges'), admin_badges_path %>
+    <% else %>
+      <%= link_to t('.badges'), badges_path %>
+    <% end %>
   </p>
 </div>
 </footer>

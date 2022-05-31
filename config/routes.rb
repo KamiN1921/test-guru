@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   end
 
   resources :feedback, only: %i[new create]
+  resources :badges, only: %i[index show]
+  resources :achivments, only: :index
 
   resources :results, only: %i[show update] do
     member do
@@ -30,5 +32,7 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+
+    resources :badges
   end
 end
