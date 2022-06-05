@@ -9,12 +9,11 @@ class ResultsController < ApplicationController
 
   def update
     @result.accept!(params.require([:answer_ids]))
-    achivment_service = AchivmentsService.new(@result)
-    if achivment_service.call
-      flash[:notice] = t('.get_achivment') + "#{ view_context.link_to(t('.reward'), achivments_path, target: :_blank) }"
-    end
-
-      if @result.completed?
+    if @result.completed?
+      achivment_service = AchivmentsService.new(@result)
+      if achivment_service.call
+        flash[:notice] = t('.get_achivment') + "#{ view_context.link_to(t('.reward'), achivments_path, target: :_blank) }"
+      end
       TestsMailer.completed_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else

@@ -1,5 +1,6 @@
-document.addEventListener('turbolinks:load',function () {
+$(document).ready(function () {
     var control = document.querySelector('.progress-scale')
-
-    control.style.width = control.dataset.progress+'%'
+    if(control) {
+        control.style.width = control.dataset.progress + '%'
+    }
 });

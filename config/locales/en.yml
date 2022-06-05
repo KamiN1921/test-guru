@@ -65,6 +65,9 @@ en:
         delete: "Exterminate"
         questions: "Questions"
         published: "Published?"
+        count: "Count of questions"
+        category: "Category"
+        action: "Actions"
       show:
         title: "Questions"
         new: "New"
