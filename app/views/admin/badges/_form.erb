@@ -1,4 +1,4 @@
-<%= form_with model: [:admin, @badge], local: true do |form| %>
+<%= form_with model: [:admin, @badge] , :html => { :onsubmit => "return beforeSend(this)" }, local: true do |form| %>
   <%= render 'shared/errors', resource: @badge %>
   <div class="mt-2">
     <%= form.label :title %>
@@ -13,16 +13,20 @@
     <%= form.select :rule, Badge::RULES %>
   </div>
   <div class="mt-2 hide params params-category">
-    <%= form.label :param %>
-    <%= form.select(:param) do %>
+    <%= form.label :options %>
+    <%= form.select(:options) do %>
       <% Category.select(:title,:id).distinct.each do |c| -%>
         <%= content_tag(:option, c.title, value: c.id) %>
       <% end %>
     <% end %>
   </div>
   <div class="mt-2 params hide params-level">
-    <%= form.label :param %>
-    <%= form.number_field :param, in: 0..10, value: 0%>
+    <%= form.label :options %>
+    <%= form.number_field :options, in: 0..10, value: 0%>
+  </div>
+
+  <div class="mt-2 params hide final-param">
+    <%= form.text_field :param %>
   </div>
   <div class="mt-2">
     <%= form.submit t('.submit'), class: "btn btn-primary" %>

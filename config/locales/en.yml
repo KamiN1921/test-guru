@@ -65,6 +65,9 @@ en:
         delete: "Exterminate"
         questions: "Questions"
         published: "Published?"
+        count: "Count of questions"
+        category: "Category"
+        action: "Actions"
         timer: "Time to pass(min)"
       show:
         title: "Questions"

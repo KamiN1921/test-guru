@@ -2,13 +2,13 @@
 <table>
   <tr>
 <td>
-  <%=image_tag(badge.file, height: '32', width: '32',  class: 'image')%>
+  <%=image_tag(@badge.file, height: '32', width: '32',  class: 'image')%>
 </td>
 <td>
-  <%= badge.title %>
+  <%= @badge.title %>
 </td>
 <td>
-  <%= badge.rule %>
+  <%= @badge.rule %>
 </td>
   </tr>
 </table>
