@@ -28,10 +28,10 @@ $( document ).ready(function () {
     if (!control.length) {
         return 0;
     }
+  
     for (let i = 0; i < control.length; i++) {
         control[i].addEventListener('click', formInlineLinkHandler)
     }
-
 
     let errors = $('.recource-errors')
 

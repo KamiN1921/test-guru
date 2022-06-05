@@ -18,6 +18,7 @@ en:
         title: "Title"
         level: "Level"
         published: "Published"
+        timer: "Time to pass"
       question:
         body: 'Question'
       answer:

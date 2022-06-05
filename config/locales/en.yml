@@ -68,6 +68,7 @@ en:
         count: "Count of questions"
         category: "Category"
         action: "Actions"
+        timer: "Time to pass(min)"
       show:
         title: "Questions"
         new: "New"
@@ -132,6 +133,7 @@ en:
       failed: "You failed test on %{percent}"
     show:
       title: "Test passage %{title}"
+      time: "Time for pass"
     gist:
       success: "Success saved"
       failure: "We can't save gist"
