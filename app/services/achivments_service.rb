@@ -8,7 +8,7 @@ class AchivmentsService
     end
 
     def call
-      Badge.where.not(param: nil).select do |badge|
+      Badge.where.not(param: nil) do |badge|
         @badges.push(badge) if send(badge.rule, badge.param)
       end
       @user.badges.push(@badges) if @badges.any?
@@ -18,11 +18,11 @@ class AchivmentsService
     private
 
     def completed_first_try(_params)
-      @result.completed? && (Result.where(user: @user, test: @test).count <= 1)
+      @result.success? && (Result.where(user: @user, test: @test).count == 1)
     end
 
-    def completed_category(category_level)
-      tests = Test.test_categories(Category.find(category_level).title).pluck(:id)
+    def completed_category(category)
+      tests = Test.test_categories(Category.find(category).title).pluck(:id)
 
       tests.count == user_success_results(tests)
     end
@@ -34,7 +34,7 @@ class AchivmentsService
     end
 
     def user_success_results(tests)
-      Result.where(user: @user, test_id: tests, clear: true)
+      @user_success_results ||= Result.where(user: @user, test_id: tests, clear: true)
                  .pluck(:test_id).uniq.count
     end
 end

@@ -13,9 +13,11 @@ class ResultsController < ApplicationController
     @result.accept!(params.require([:answer_ids]))
 
     if @result.completed? || @result.ended?
-      achivment_service = AchivmentsService.new(@result)
-      if achivment_service.call
-        flash[:notice] = t('.get_achivment') + "#{ view_context.link_to(t('.reward'), achivments_path, target: :_blank) }"
+      if@result.success?
+        achivment_service = AchivmentsService.new(@result)
+        if achivment_service.call
+          flash[:notice] = t('.get_achivment') + "#{ view_context.link_to(t('.reward'), achivments_path, target: :_blank) }"
+        end
       end
       TestsMailer.completed_test(@result).deliver_now
       redirect_to result_result_path(@result)
