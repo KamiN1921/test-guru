@@ -4,7 +4,7 @@ class CreateBadges < ActiveRecord::Migration[7.0]
       t.string :title, null: false
       t.string :file, null: false, default:"./assets/images/default_badge.jpg"
       t.string :rule, null: false
-      t.integer :param
+      t.string :param
 
 
       t.timestamps

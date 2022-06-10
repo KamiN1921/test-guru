@@ -16,7 +16,7 @@
     <%= form.label :options %>
     <%= form.select(:options) do %>
       <% Category.select(:title,:id).distinct.each do |c| -%>
-        <%= content_tag(:option, c.title, value: c.id) %>
+        <%= content_tag(:option, c.title, value: c.title) %>
       <% end %>
     <% end %>
   </div>

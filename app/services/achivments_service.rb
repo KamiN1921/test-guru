@@ -8,11 +8,10 @@ class AchivmentsService
     end
 
     def call
-      Badge.where.not(param: nil) do |badge|
+      Badge.where.not(param: nil).each do |badge|
         @badges.push(badge) if send(badge.rule, badge.param)
       end
-      @user.badges.push(@badges) if @badges.any?
-      @badges.any?
+      @badges
     end
 
     private
@@ -22,7 +21,7 @@ class AchivmentsService
     end
 
     def completed_category(category)
-      tests = Test.test_categories(Category.find(category).title).pluck(:id)
+      tests = Test.test_categories(category).pluck(:id)
 
       tests.count == user_success_results(tests)
     end

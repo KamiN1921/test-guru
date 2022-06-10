@@ -13,9 +13,11 @@ class ResultsController < ApplicationController
     @result.accept!(params.require([:answer_ids]))
 
     if @result.completed? || @result.ended?
-      if@result.success?
-        achivment_service = AchivmentsService.new(@result)
-        if achivment_service.call
+      if @result.success?
+        achivments = AchivmentsService.new(@result).call
+        binding.pry
+        if achivments.any?
+          @result.user.badges.push(achivments)
           flash[:notice] = t('.get_achivment') + "#{ view_context.link_to(t('.reward'), achivments_path, target: :_blank) }"
         end
       end
