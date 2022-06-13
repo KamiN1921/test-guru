@@ -1,2 +1,2 @@
-import "@hotwired/turbo-rails";
-import "app/javascript/controllers";
+import "@hotwired/turbo-rails"
+import "app/javascript/controllers"

@@ -65,6 +65,9 @@ en:
         delete: "Exterminate"
         questions: "Questions"
         published: "Published?"
+        count: "Count of questions"
+        category: "Category"
+        action: "Actions"
         timer: "Time to pass(min)"
       show:
         title: "Questions"
@@ -81,6 +84,41 @@ en:
         delete: "Delete"
         back: "Back"
         show: "Show"
+    badges:
+      badge:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirmation: "Are you shure?"
+      form:
+        submit: "OK"
+      edit:
+        back: "Back"
+      new:
+        badge_header: "Badge"
+        back: "Back"
+      show:
+        badge_header: "Bsdge"
+        edit: "Edit"
+        back: "Back"
+      index:
+        badge_title: "Title"
+        badge_rule: "Rule"
+        actions: "Actions"
+        badge: "Image"
+        new_badge: "New badge"
+        header: "All badges"
+    user_badges:
+      index:
+        user: "User"
+        achivment: "Achivment"
+        title: "Title"
+        rule: "Rules"
+        actions: "Actions"
+        header: "User Achivments"
+      user_badge:
+        show_badge: "Show"
+        delete: "Delete"
   tests:
     index:
       title: "Tests"
@@ -100,6 +138,10 @@ en:
       success: "Success saved"
       failure: "We can't save gist"
       view_gist: "View gist"
+    update:
+      reward: "Reward"
+      get_achivment: "You are get achivment"
+      test_not_completed: "Test not completed"
   feedback:
     new:
       subj: "What's happened?"
@@ -112,3 +154,24 @@ en:
   layouts:
     footer:
       contact: "Contact us"
+      badges: "All badges"
+      my_badges: "My achivments"
+  badges:
+    badge:
+      show: "show"
+    show:
+      badge_header: "Badge"
+    index:
+      header: "Badges"
+      badge: "Badge"
+      badge_title: "Title"
+      badge_rule: "Rule"
+      actions: "Actions"
+  achivments:
+    achivment:
+      show_badge: "To badge"
+    index:
+      achivment: "Achivment"
+      title: "Title"
+      actions: "Actions"
+      header: "My achivments"

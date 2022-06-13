@@ -1,0 +1,10 @@
+<tr>
+  <td><%= user_badge.user.first_name + ' ' + user_badge.user.last_name %></td>
+  <td><%=image_tag(badge.file, height: '32', width: '32',  class: 'image')%></td>
+  <td><%= user_badge.badge.title %></td>
+  <td><%= user_badge.badge.rule %></td>
+  <td>
+    <%= link_to t('.show_badge'), admin_badge_path(user_badge.badge) %>
+    <%= button_to t('.delete'), admin_acihvment_path(user_badge), method: :delete, class: "btn btn-danger"%>
+  </td>
+</tr>

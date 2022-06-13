@@ -1,0 +1,12 @@
+<h3><%= t('.badge_header')%></h3>
+<div class="card text-center col-5 m-auto">
+  <div class="card-header">
+    <h4><%= @badge.title %></h4>
+  </div>
+      <%= @badge.rule %>
+      <%=image_tag(@badge.file, height: '128', width: '128',  class: 'image m-auto')%>
+</div>
+<div>
+    <%= link_to t('.edit'), edit_admin_badge_path(@badge) %>
+    <%= link_to t('.back'), admin_badges_path%>
+</div>

@@ -1,0 +1,14 @@
+<h3><%= t('.badge_header')%></h3>
+<table>
+  <tr>
+<td>
+  <%=image_tag(@badge.file, height: '32', width: '32',  class: 'image')%>
+</td>
+<td>
+  <%= @badge.title %>
+</td>
+<td>
+  <%= @badge.rule %>
+</td>
+  </tr>
+</table>

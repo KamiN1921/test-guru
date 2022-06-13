@@ -1,0 +1,21 @@
+<h3 class="mt-5"><%= t('.header') %></h3>
+
+<%= render 'shared/errors', resource: @user_badge %>
+
+<div class="container">
+    <table class="table mt-5">
+        <thead>
+        <tr>
+            <th><%= t('.user') %></th>
+            <th><%= t('.achivment') %></th>
+            <th><%= t('.title') %></th>
+            <th><%= t('.rule') %></th>
+            <th><%= t('.actions') %></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <%= render @user_badges %>
+        </tbody>
+    </table>
+</div>

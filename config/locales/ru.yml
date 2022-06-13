@@ -34,6 +34,9 @@ ru:
         delete: "Удалить"
         questions: "Вопросы"
         published: "Опубликован?"
+        count: "Количество вопросов"
+        category: "Категория"
+        action: "Действия"
         timer: "Время на прохождение(мин)"
       show:
         title: "Вопросы к тесту"
@@ -50,6 +53,41 @@ ru:
         delete: "Удалить"
         back: "Назад"
         show: "Показать"
+    badges:
+      badge:
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
+        confirmation: "Вы уверены?"
+      form:
+        submit: "Принять"
+      edit:
+        back: "Назад"
+      new:
+        badge_header: "Бейдж"
+        back: "Назад"
+      show:
+        badge_header: "бейдж"
+        edit: "Редактировать"
+        back: "Назад"
+      index:
+        badge_title: "Название"
+        badge_rule: "Правило"
+        actions: "Действия"
+        badge: "Изображение"
+        new_badge: "Создать достижение"
+        header: "Все достижения"
+    user_badges:
+      index:
+        user: "Пользователь"
+        achivment: "Достижение"
+        title: "Название"
+        rule: "Правила начисления"
+        actions: "Действия"
+        header: "Достижения пользователей"
+      user_badge:
+        delete: "Удалить"
+        show_badge: "Показать"
   tests:
     index:
       title: "Тесты"
@@ -70,6 +108,10 @@ ru:
       success: "Успешно сохранен"
       failure: "Во время сохранения произошла ошибка"
       view_gist: "Перейти к gist"
+    update:
+      reward: "Достижение"
+      get_achivment: "Вы получили достижение"
+      test_not_completed: "Тест не пройден"
   feedback:
     new:
       subj: "Что случилось?"
@@ -82,3 +124,24 @@ ru:
   layouts:
     footer:
       contact: "Свяжитесь с нами"
+      badges: "Достижения"
+      my_badges: "Мои достижения"
+  badges:
+    badge:
+      show: "показать"
+    show:
+      badge_header: "Достижение"
+    index:
+      header: "Бейджи"
+      badge: "Изображение"
+      badge_title: "Название"
+      badge_rule: "Правилo"
+      actions: "Действия"
+  achivments:
+    achivment:
+      show_badge: "Посмотреть"
+    index:
+      achivment: "Достижения"
+      title: "Название"
+      actions: "Действия"
+      header: "Мои достижения"

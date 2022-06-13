@@ -37,7 +37,11 @@ class Result < ApplicationRecord
   end
 
   def next_question
-   self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+    if self.completed?
+      self.end_test!
+    else
+      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+    end
   end
 
   def index_question
