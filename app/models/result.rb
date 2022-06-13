@@ -25,7 +25,7 @@ class Result < ApplicationRecord
   end
 
   def end_test!
-    self.update!({clear:true})
+    self.update({clear:true})
   end
 
   def percent
